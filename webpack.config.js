@@ -9,7 +9,14 @@ module.exports = {
     devtool: 'inline-source-map',
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Your title here',
+            title: 'Battleship (game)',
+            meta: {
+                someName: {
+                    'http-equiv': 'X-UA-Compatible',
+                    content: 'ie=edge',
+                },
+            },
+            favicon: './src/favicon.png',
         }),
     ],
     output: {
