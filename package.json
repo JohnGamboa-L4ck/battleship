@@ -1,0 +1,29 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "## Purpose This Battleship project was part of my self-guided education through The Odin Project JS Curriculum. The intention of this was to practice the basics of testing using Jest,",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnGamboa-L4ck/battleship.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnGamboa-L4ck/battleship/issues"
+  },
+  "homepage": "https://github.com/JohnGamboa-L4ck/battleship#readme",
+  "devDependencies": {
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.56.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
