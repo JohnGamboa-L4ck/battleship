@@ -4,7 +4,7 @@
   "description": "## Purpose This Battleship project was part of my self-guided education through The Odin Project JS Curriculum. The intention of this was to practice the basics of testing using Jest,",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch": "webpack --watch",
     "build": "webpack"
   },
@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/JohnGamboa-L4ck/battleship#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.15.6",
     "css-loader": "^6.3.0",
     "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.2.4",
     "style-loader": "^3.3.0",
     "webpack": "^5.56.0",
     "webpack-cli": "^4.8.0"
