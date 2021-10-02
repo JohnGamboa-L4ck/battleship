@@ -1,4 +1,4 @@
-import shipFactory from '../js/factories/shipFactory';
+import shipFactory from '../factories/shipFactory';
 
 describe('Ship Factory', () => {
     test('adds 1 + 2 to equal 3', () => {
