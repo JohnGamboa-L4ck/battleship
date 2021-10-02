@@ -1,3 +1,5 @@
 export default function shipFactory() {
-    return '1';
+    return {
+        method: 'somthing',
+    };
 }
