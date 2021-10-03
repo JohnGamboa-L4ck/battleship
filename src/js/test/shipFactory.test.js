@@ -18,7 +18,7 @@ describe('Ship factory', () => {
                 setCoords: expect.any(Function),
                 getCoords: expect.any(Function),
                 hit: expect.any(Function),
-                hitRecieved: expect.any(Function),
+                hitsRecieved: expect.any(Function),
                 isSunk: expect.any(Function),
             });
     });
@@ -47,7 +47,7 @@ describe('Ship factory', () => {
 
     it('recieve and record a hit', () => {
         battleship.hit('A2');
-        expect(battleship.hitRecieved())
+        expect(battleship.hitsRecieved())
             .toEqual(['A2']);
     });
 
