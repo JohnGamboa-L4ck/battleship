@@ -40,6 +40,12 @@ describe('Ship factory', () => {
             .toEqual(['C1', 'C2', 'C3', 'C4']);
     });
 
+    it('failed to set the array value of coordinates', () => {
+        battleship.setCoords(['C1', 'C2', 'C3', 'C4', 'c5']);
+        expect(battleship.getCoords())
+            .toEqual(['A1', 'A2', 'A3', 'A4']);
+    });
+
     it('return an array value of coordinates', () => {
         expect(battleship.getCoords())
             .toEqual(['A1', 'A2', 'A3', 'A4']);

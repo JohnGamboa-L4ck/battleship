@@ -1,4 +1,5 @@
 export default function shipFactory(name, loa) {
+    // loa means length overall
     let axis = 'horizontal';
     let coords;
     const ruin = [];
@@ -11,13 +12,13 @@ export default function shipFactory(name, loa) {
         },
         getAxis: () => axis,
         setCoords: (array) => {
-            coords = array;
+            if (array.length === loa) coords = array;
         },
         getCoords: () => coords,
         hit: (string) => {
             ruin.push(string);
         },
         hitsRecieved: () => ruin,
-        isSunk: () => (coords.length === ruin.length),
+        isSunk: () => (ruin.length === loa),
     };
 }
