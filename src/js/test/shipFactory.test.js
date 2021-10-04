@@ -12,7 +12,7 @@ describe('Ship factory', () => {
         expect(battleship)
             .toEqual({
                 name: 'battleship',
-                loa: 4,
+                size: 4,
                 maneuver: expect.any(Function),
                 getAxis: expect.any(Function),
                 setCoords: expect.any(Function),

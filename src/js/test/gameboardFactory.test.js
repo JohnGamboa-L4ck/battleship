@@ -14,6 +14,7 @@ describe('Gameboard factory', () => {
             getMissedAttacks: expect.any(Function),
             setShipCoords: expect.any(Function),
             getShipCoords: expect.any(Function),
+            isReady: expect.any(Function),
         });
     });
 });
