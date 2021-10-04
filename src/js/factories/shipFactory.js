@@ -11,7 +11,11 @@ export default function shipFactory(name, size) {
         },
         getAxis: () => axis,
         setCoords: (array) => {
-            if (array.length === size) coords = array;
+            if (array.length === size) {
+                coords = array;
+                return true;
+            }
+            return false;
         },
         getCoords: () => coords,
         hit: (string) => {

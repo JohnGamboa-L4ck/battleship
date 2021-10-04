@@ -34,16 +34,16 @@ describe('Ship factory', () => {
             .toBe('vertical');
     });
 
-    it('set the array value of coordinates', () => {
-        battleship.setCoords(['C1', 'C2', 'C3', 'C4']);
+    it('set the array value of coordinates and returns true', () => {
+        expect(battleship.setCoords(['C1', 'C2', 'C3', 'C4']))
+            .toBeTruthy();
         expect(battleship.getCoords())
             .toEqual(['C1', 'C2', 'C3', 'C4']);
     });
 
-    it('failed to set the array value of coordinates', () => {
-        battleship.setCoords(['C1', 'C2', 'C3', 'C4', 'c5']);
-        expect(battleship.getCoords())
-            .toEqual(['A1', 'A2', 'A3', 'A4']);
+    it('failed to set the array value of coordinates will return false', () => {
+        expect(battleship.setCoords(['C1', 'C2', 'C3', 'C4', 'c5']))
+            .toBeFalsy();
     });
 
     it('return an array value of coordinates', () => {
