@@ -3,6 +3,8 @@ export default function shipFactory(name, size) {
     let coords;
     const ruin = [];
 
+    if (size <= 3) axis = 'vertical';
+
     return {
         name,
         size,

@@ -21,9 +21,24 @@ describe('Gameboard factory', () => {
             });
     });
 
-    it('returns an array if it successfully set a ship coordinates', () => {
-        expect(gameboard.setShipCoords('battleship', 'B', 1))
-            .toEqual(['B1', 'B2', 'B3', 'B4']);
+    it('returns an array if successfully set a ship coords horizontally', () => {
+        expect(gameboard.setShipCoords('battleship', 'B', 7))
+            .toEqual(['B7', 'B8', 'B9', 'B10']);
+    });
+
+    it('returns false if it failed to set a ship coords horizontally', () => {
+        expect(gameboard.setShipCoords('battleship', 'B', 8))
+            .toBe(false);
+    });
+
+    it('returns an array if successfully set a ship coords vertically', () => {
+        expect(gameboard.setShipCoords('patrol boat', 'I', 10))
+            .toEqual(['I10', 'J10']);
+    });
+
+    it('returns false if it failed to set a ship coords vertically', () => {
+        expect(gameboard.setShipCoords('patrol boat', 'J', 10))
+            .toBe(false);
     });
 
     it('returns an array of placed ship coordinates', () => {
