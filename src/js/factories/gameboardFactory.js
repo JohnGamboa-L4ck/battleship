@@ -49,13 +49,51 @@ export default function gameboardFactory(admiral) {
     };
 
     const getAllCoords = () => {
-        
+        const array = [];
+        fleet.forEach((ship) => {
+            if (ship.getCoords()) {
+                array.push({
+                    name: ship.name,
+                    coords: ship.getCoords(),
+                });
+            }
+        });
+        return array;
     };
 
-    const receiveAttack = () => {};
-    const getMissedAttacks = () => {};
-    const isReady = () => {};
-    const isDefeated = () => {};
+    const receiveAttack = (string) => {
+        let result = false;
+        fleet.forEach((ship) => {
+            if (ship.getCoords()) {
+                const coords = ship.getCoords();
+                if (coords.includes(string)) {
+                    ship.hit(string);
+                    result = string;
+                }
+            }
+        });
+
+        missedAttacks.push(string);
+        return result;
+    };
+
+    const getMissedAttacks = () => missedAttacks;
+
+    const isReady = () => {
+        const coords = getAllCoords();
+        if (coords.length === fleet.length) return true;
+        return false;
+    };
+
+    const isDefeated = () => {
+        let counter = 0;
+        fleet.forEach((ship) => {
+            if (ship.isSunk()) counter += 1;
+        });
+
+        if (counter === fleet.length) return true;
+        return false;
+    };
 
     return {
         admiral,
