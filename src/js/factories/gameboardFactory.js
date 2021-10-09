@@ -73,7 +73,10 @@ export default function gameboardFactory(admiral) {
             }
         });
 
-        missedAttacks.push(string);
+        if (result === false) {
+            missedAttacks.push(string);
+        }
+
         return result;
     };
 
