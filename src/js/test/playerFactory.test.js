@@ -1,7 +1,16 @@
-import playerFactory from '../factories/shipFactory';
+import playerFactory from '../factories/playerFactory';
 
 describe('Player factory', () => {
+    let player;
+
+    beforeEach(() => {
+        player = playerFactory('John');
+    });
+
     it('return the expected object', () => {
-        expect(playerFactory()).toBe('1');
+        expect(player)
+            .toEqual({
+                name: 'John',
+            });
     });
 });

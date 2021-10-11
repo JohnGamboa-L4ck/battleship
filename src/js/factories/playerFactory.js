@@ -1,5 +1,5 @@
-export default function playerFactory() {
+export default function playerFactory(name) {
     return {
-        method: 'somthing',
+        name,
     };
 }

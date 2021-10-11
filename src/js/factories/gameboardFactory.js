@@ -34,20 +34,6 @@ export default function gameboardFactory(admiral) {
         },
     };
 
-    const setShipCoords = (name, y, x) => {
-        let result = false;
-        fleet.forEach((ship, index) => {
-            if (ship.name === name) {
-                const coordsArray = pvt.generateCoords(ship.getAxis(),
-                    index, y.toUpperCase(), x);
-                if (coordsArray && ship.setCoords(coordsArray)) {
-                    result = coordsArray;
-                }
-            }
-        });
-        return result;
-    };
-
     const getAllCoords = () => {
         const array = [];
         fleet.forEach((ship) => {
@@ -59,6 +45,33 @@ export default function gameboardFactory(admiral) {
             }
         });
         return array;
+    };
+
+    const setShipCoords = (name, y, x) => {
+        let result = false;
+        fleet.forEach((ship, index) => {
+            if (ship.name === name) {
+                const allCoords = getAllCoords();
+                const coordsArray = pvt.generateCoords(ship.getAxis(),
+                    index, y.toUpperCase(), x);
+
+                if (coordsArray) {
+                    let duplicate = 0;
+                    coordsArray.forEach((newCoords) => {
+                        allCoords.forEach((placedCoords) => {
+                            if (placedCoords.coords.includes(newCoords)) duplicate += 1;
+                        });
+                    });
+
+                    if (duplicate === 0) {
+                        if (ship.setCoords(coordsArray)) {
+                            result = coordsArray;
+                        }
+                    }
+                }
+            }
+        });
+        return result;
     };
 
     const receiveAttack = (string) => {

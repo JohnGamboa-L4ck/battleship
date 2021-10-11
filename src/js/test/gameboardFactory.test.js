@@ -14,7 +14,7 @@ describe('Gameboard factory', () => {
             .toEqual({
                 admiral: 'John',
                 setShipCoords: expect.any(Function),
-                getAllCoords: expect.any(Function), // might not be needed or use as private
+                getAllCoords: expect.any(Function),
                 receiveAttack: expect.any(Function),
                 getMissedAttacks: expect.any(Function),
                 isReady: expect.any(Function),
@@ -39,6 +39,11 @@ describe('Gameboard factory', () => {
 
     it('returns false if it failed to set a ship coords vertically', () => {
         expect(gameboard.setShipCoords('patrol boat', 'J', 10))
+            .toBe(false);
+    });
+
+    it('returns false if it failed to set a ship coords: coords taken', () => {
+        expect(gameboard.setShipCoords('patrol boat', 'A', 1))
             .toBe(false);
     });
 
@@ -73,8 +78,8 @@ describe('Gameboard factory', () => {
     it('returns true if all ship has been placed', () => {
         gameboard.setShipCoords('carrier', 'B', 1);
         gameboard.setShipCoords('submarine', 'C', 1);
-        gameboard.setShipCoords('destroyer', 'D', 1);
-        gameboard.setShipCoords('patrol boat', 'E', 1);
+        gameboard.setShipCoords('destroyer', 'D', 2);
+        gameboard.setShipCoords('patrol boat', 'E', 3);
         expect(gameboard.isReady())
             .toBeTruthy();
     });
