@@ -1,7 +1,7 @@
 import '../css/main.css';
-import printMe from './static';
+import setup from './static';
 
-printMe();
+setup();
 
 // When all of the squares of a ship have been hit, the ship's owner announces the sinking of
 // the Carrier, Submarine, Cruiser/Destroyer/Patrol Boat, or the titular Battleship. If all of

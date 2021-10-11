@@ -1,3 +1,27 @@
+:root {
+    --light: hsl(0, 0%, 92%);
+    --dark: hsl(0, 0%, 12%);
+
+    --background: var(--light);
+    --color: var(--dark)
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;  
+}
+
 body {
-    background-color: brown;
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--color);
+}
+
+body,
+button,
+input {
+    font-family:Verdana, Geneva, "DejaVu Sans", sans-serif;
 }
