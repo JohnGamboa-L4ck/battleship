@@ -1,9 +1,7 @@
 :root {
     --light: hsl(0, 0%, 92%);
     --dark: hsl(0, 0%, 12%);
-
-    --background: var(--light);
-    --color: var(--dark)
+    --light-red: hsl(0, 100%, 90%);
 }
 
 *, *:before, *:after {
@@ -16,12 +14,87 @@
 
 body {
     min-height: 100vh;
-    background-color: var(--background);
-    color: var(--color);
 }
 
 body,
 button,
 input {
     font-family:Verdana, Geneva, "DejaVu Sans", sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+.header {
+    font-size: clamp(2.2rem, 10vw, 5.2rem);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 1rem;
+    word-wrap: break-word;
+}
+
+.name-form {
+    padding: 0 1rem 0 1rem;
+}
+
+.name-fieldset {
+    max-width: 320px;
+    margin: auto;
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+}
+
+.name-fieldset > * {
+    display: block;
+}
+
+.name-legend {
+    margin: 0 0 0 20px;
+}
+
+.name-input {
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    width: calc(100% - 1rem);
+    height: 100%;
+    margin: .5rem;
+    padding: .5rem;
+}
+
+.name-input:focus {
+    outline: 1px solid gray;
+}
+
+.name-error {
+    display: none;
+    padding: .5rem;
+    border-radius: 3px;
+    color: var(--dark);
+    background-color: var(--light-red);
+}
+
+.name-error.visible{
+    display: block;
+}
+
+.name-error,
+.play-button {
+    margin: 0 .5rem .5rem .5rem;
+}
+
+.play-button {
+    float: right;
+    padding: .25rem .5rem;
+    text-transform: capitalize;
 }
