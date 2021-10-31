@@ -6,15 +6,15 @@ export default function setup() {
     document.querySelector('html').setAttribute('lang', 'en');
     // create app main container
     appendTo('body', elementFactory('div', 'app', { id: 'app' }));
-    // create header and form
+    // create header, form and div
     appendTo('#app', [
         elementFactory('h1', 'header', [
             { id: 'header' },
             { innerHTML: 'battle&shy;ship' }]),
         elementFactory('form', 'name-form', [
             { id: 'nameForm' },
-            { novalidate: '' },
-        ]),
+            { novalidate: '' }]),
+        elementFactory('div', 'sea', { id: 'sea' }),
     ]);
     // create fieldset
     appendTo('#nameForm', elementFactory('fieldset', 'name-fieldset',
@@ -26,7 +26,7 @@ export default function setup() {
             { id: 'nameInput' },
         ]),
     ]);
-    // create hidden small tag for input error
+    // create small tag for input error
     appendTo('#nameFieldset', elementFactory('small', 'name-error', { id: 'nameError' }));
     // create play button
     appendTo('#nameFieldset', elementFactory('button', 'play-button', [
