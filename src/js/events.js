@@ -1,3 +1,5 @@
+import game from './game';
+
 const validator = (event) => {
     event.preventDefault();
     const input = document.querySelector('#nameInput').value.trim();
