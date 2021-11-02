@@ -1,6 +1,9 @@
 :root {
-    --light: hsl(0, 0%, 92%);
+    --anti-flash-white: hsl(195, 53%, 94%);
+    --chinese-silver: hsl(0, 0%, 80%);
     --dark: hsl(0, 0%, 12%);
+    --dark-charcoal: hsl(0, 0%, 20%);
+    --light: hsl(0, 0%, 92%);
     --light-red: hsl(0, 100%, 90%);
 }
 
@@ -98,6 +101,81 @@ button {
 
 .sea {
     display: none;
+    padding: .8rem;
+    flex: 1;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: auto;
+}
+
+.notifier {
+    display: none;
+    font-size: clamp(1rem, 10vw, 1.25rem);
+    text-align: center;
+    padding: .25rem;
+    color: var(--dark-charcoal);
+    background-color: var(--chinese-silver);
+}
+
+.player-board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 500px;
+    height: 500px;
+    border: 5px solid var(--dark);
+    background-color: white;
+}
+
+.coord {
+    font-size: 9px;
+    padding: 2px 0 0 2px;
+    border: 1px solid var(--chinese-silver);
+    background-color: var(--anti-flash-white);
+}
+
+.harbor {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    min-width: 500px;
+    min-height: 500px;
+    background-color: white;
+}
+
+.dock {
+    padding: .25rem;
+    min-height: 120px;
+}
+
+.dock > *,
+.ship-form > * {
+    margin: .2rem;
+}
+
+.ship-name {
+    text-transform: capitalize;
+}
+
+.ship-body {
+    border: 1px solid var(--chinese-silver);
+    float: right;
+    display: flex;
+}
+
+.block {
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--chinese-silver);
+}
+
+.rotate-button,
+.deploy-button {
+    padding: .2rem;
+}
+
+.header.reduced {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    margin: .8rem;
 }
 
 .name-form.hidden {
@@ -105,6 +183,14 @@ button {
 }
 
 .name-error.visible,
-.sea.visible {
+.notifier.visible {
     display: block;
+}
+
+.sea.visible {
+    display: flex;
+}
+
+.ship-body.vertical {
+    flex-direction: column;
 }

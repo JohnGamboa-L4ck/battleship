@@ -47,11 +47,16 @@ export default function gameboardFactory(admiral) {
         return array;
     };
 
-    const setShipCoords = (name, y, x) => {
+    const setShipCoords = (name, y, x, newAxis) => {
         let result = false;
         fleet.forEach((ship, index) => {
             if (ship.name === name) {
                 const allCoords = getAllCoords();
+
+                if (newAxis) {
+                    if (ship.getAxis() !== newAxis) ship.maneuver();
+                }
+
                 const coordsArray = pvt.generateCoords(ship.getAxis(),
                     index, y.toUpperCase(), x);
 

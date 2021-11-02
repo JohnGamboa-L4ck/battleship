@@ -14,6 +14,7 @@ export default function setup() {
         elementFactory('form', 'name-form', [
             { id: 'nameForm' },
             { novalidate: '' }]),
+        elementFactory('h2', 'notifier', { id: 'notifier' }),
         elementFactory('div', 'sea', { id: 'sea' }),
     ]);
     // create fieldset
