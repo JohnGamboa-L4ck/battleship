@@ -15,7 +15,7 @@ const validator = (event) => {
 
         battleship = game();
         battleship.setPlayerAndBoards(input);
-        battleship.createUI();
+        battleship.prepUI();
     } else {
         error.className = 'name-error visible';
         if (input.length > 20) {
