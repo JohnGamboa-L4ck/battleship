@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "watch": "webpack --watch",
+    "start": "webpack serve --open",
     "build": "webpack",
     "lint": "eslint ./"
   },
@@ -30,6 +31,7 @@
     "jest": "^27.2.4",
     "style-loader": "^3.3.0",
     "webpack": "^5.56.0",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.7.3"
   }
 }
