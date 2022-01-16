@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/mrjgamboa/battleship/issues"
   },
-  "homepage": "http://github.com/mrjgamboa/battleship#readme",
+  "homepage": "https://mrjgamboa.github.io/battleship/",
   "devDependencies": {
     "@babel/preset-env": "^7.15.6",
     "css-loader": "^6.3.0",
